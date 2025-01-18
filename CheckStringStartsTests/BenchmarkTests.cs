@@ -1,5 +1,7 @@
 public class BenchmarkTests
 {
+    private readonly Benchmark _benchmark = new Benchmark();
+
     [Theory]
     [InlineData(".example", true)]
     [InlineData("example", false)]
@@ -7,8 +9,8 @@ public class BenchmarkTests
     [InlineData(null, false)]
     public void TestStartsWithDotString(string input, bool expected)
     {
-        var benchmark = new Benchmark();
-        var result = benchmark.StartsWithDotString(input);
+
+        var result = _benchmark.StartsWithDotString(input);
         Assert.Equal(expected, result);
     }
 
@@ -19,8 +21,7 @@ public class BenchmarkTests
     [InlineData(null, false)]
     public void TestStartsWithDotChar(string input, bool expected)
     {
-        var benchmark = new Benchmark();
-        var result = benchmark.StartsWithDotChar(input);
+        var result = _benchmark.StartsWithDotChar(input);
         Assert.Equal(expected, result);
     }
 
@@ -30,8 +31,7 @@ public class BenchmarkTests
     [InlineData("", false)]
     public void TestStartsWithDotSpan(string input, bool expected)
     {
-        var benchmark = new Benchmark();
-        var result = benchmark.StartsWithDotSpan(input.AsSpan());
+        var result = _benchmark.StartsWithDotSpan(input.AsSpan());
         Assert.Equal(expected, result);
     }
 }
