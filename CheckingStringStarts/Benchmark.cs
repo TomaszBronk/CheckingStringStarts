@@ -1,6 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
-using System;
 
 public class Benchmark
 {

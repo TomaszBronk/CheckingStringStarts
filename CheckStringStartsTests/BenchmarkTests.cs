@@ -1,6 +1,3 @@
-using BenchmarkDotNet.Running;
-using Xunit;
-
 public class BenchmarkTests
 {
     [Theory]
